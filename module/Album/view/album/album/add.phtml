@@ -1,0 +1,45 @@
+<?php
+$title = 'Add new album';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('album', array('action' => 'add')));
+$form->setAttribute('enctype', 'multipart/form-data');
+$form->prepare();
+
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+?>
+<div class="form-group">
+    <?php
+    echo $this->formRow($form->get('title')->setAttribute('class', 'form-control'));
+    ?>
+</div>
+<div class="form-group">
+    <?php
+    echo $this->formRow($form->get('artist')->setAttribute('class', 'form-control'));
+    ?>
+</div>
+<div class="form-group">
+    <?php
+    echo $this->formRow($form->get('file'));
+    ?>
+</div>
+<div class="btn-group">
+    <?php
+    echo $this->formSubmit($form->get('submit')->setAttribute('class', 'btn btn-primary'));
+    ?>
+</div>
+<?php
+echo $this->form()->closeTag();
+?>
+<!--<br>-->
+<!--<form enctype="multipart/form-data" action="/file/upload" method="POST">
+    <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+    Choose a file to upload: <input name="uploadedfile" type="file" />
+    <br />
+    <input type="submit" value="Upload File" />
+</form>-->
