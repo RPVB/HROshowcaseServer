@@ -45,7 +45,7 @@ class AlbumControllerTest extends PHPUnit_Framework_TestCase {
 
     public function testDeleteActionCanBeAccessed() {
         $this->routeMatch->setParam('action', 'delete');
-        $this->routeMatch->setParam('id', '1');
+        $this->routeMatch->setParam('id', '11');
 
         $result = $this->controller->dispatch($this->request);
         $response = $this->controller->getResponse();
@@ -55,7 +55,7 @@ class AlbumControllerTest extends PHPUnit_Framework_TestCase {
 
     public function testEditActionCanBeAccessed() {
         $this->routeMatch->setParam('action', 'edit');
-        $this->routeMatch->setParam('id', '1');
+        $this->routeMatch->setParam('id', '11');
 
         $result = $this->controller->dispatch($this->request);
         $response = $this->controller->getResponse();
